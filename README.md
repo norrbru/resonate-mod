@@ -1,4 +1,4 @@
-<img src='reasonate-github-header.jpg' width='100%'>
+<img src='reasonate-header.jpg' width='100%'>
 
 # ***Resonate***
 

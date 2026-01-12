@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dughwn5cisraq"
-path="res://.godot/imported/resonate-logo.png-6a8a4a98c9457c7843a50699ddface48.ctex"
+uid="uid://sgyb2wumgbst"
+path="res://.godot/imported/resonate-header.jpg-bde77efdd60c1fd3d579e85bd839111e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resonate-logo.png"
-dest_files=["res://.godot/imported/resonate-logo.png-6a8a4a98c9457c7843a50699ddface48.ctex"]
+source_file="res://resonate-header.jpg"
+dest_files=["res://.godot/imported/resonate-header.jpg-bde77efdd60c1fd3d579e85bd839111e.ctex"]
 
 [params]
 

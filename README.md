@@ -1,9 +1,14 @@
-<img src='resonate-header.jpg' width='100%'>
+# **_Resonate_**
 
-# ***Resonate***
+![Resonate](resonate-header.jpg)
 
 An all-in-one sound and music management addon for the Godot game engine (see
 compatibility).
+
+> [!NOTE]
+> This repository only provides builds for Godot 4.3 and newer. If you need
+> Resonate for an earlier version of Godot, it can be downloaded from the
+> [Huge Menace GitHub repository].
 
 [![Static Badge](https://img.shields.io/badge/Godot-Asset_Library-red?style=for-the-badge&logo=godotengine&logoColor=white&color=%23558bbe)](https://godotengine.org/asset-library/asset/2546)
 
@@ -13,7 +18,7 @@ compatibility).
 - Automatic 2D and 3D space detection.
 - Polyphonic playback.
 - Stemmed music tracks.
-- Music crossfading.
+- Music cross-fading.
 
 ## TL;DR
 
@@ -23,8 +28,8 @@ The **SoundManager** automatically pools and orchestrates
 **AudioStreamPlayers** for you and gives you control over the players when
 needed.
 
-The **MusicManager** composes music tracks built from ***stems*** and supports
-the (cross)fading of tracks or stems out of the box.
+The **MusicManager** composes music tracks built from **_stems_** and supports
+the (cross-)fading of tracks or stems out of the box.
 
 ## Docs
 
@@ -51,9 +56,10 @@ You have a few different options:
 
 ## License
 
-This project is provided ***free for personal and commercial use*** under the
+This project is provided **_free for personal and commercial use_** under the
 [MIT license] ❤
 
+[Huge Menace GitHub repository]: https://github.com/hugemenace/resonate/releases
 [Getting started]: docs/getting-started.md
 [SoundManager documentation]: docs/sound-manager.md
 [MusicManager documentation]: docs/music-manager.md

@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://coebcgearnost"]
 
-[ext_resource type="Script" path="res://examples/2d/2d.gd" id="1_3xxt8"]
+[ext_resource type="Script" path="res://examples/2D/2D.gd" id="1_3xxt8"]
 [ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_bank.gd" id="2_8j415"]
 [ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_event_resource.gd" id="3_cnd76"]
 [ext_resource type="AudioStream" uid="uid://bcv4ev20vqxx2" path="res://audio/music_stems/house_drums_stem.mp3" id="4_q31s7"]
 [ext_resource type="LabelSettings" uid="uid://tysg4xge4hsu" path="res://shared/title_label_settings.tres" id="7_wknu3"]
 [ext_resource type="LabelSettings" uid="uid://bldprl7vev3uv" path="res://shared/description_label_settings.tres" id="8_h0mrm"]
-[ext_resource type="Script" path="res://examples/2d/moving_target.gd" id="9_kf013"]
+[ext_resource type="Script" path="res://examples/2D/moving_target.gd" id="9_kf013"]
 
 [sub_resource type="Resource" id="Resource_5hea7"]
 script = ExtResource("3_cnd76")

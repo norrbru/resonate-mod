@@ -2,11 +2,9 @@ extends Node2D
 
 
 # This script is simply glue code for the two other example scenes in this folder.
-# It's worth inspecting scene_one and scene_two to learn how to handle runtime 
+# It's worth inspecting scene_one and scene_two to learn how to handle runtime
 # scene insertion and deletion while utilising the Sound and Music Managers.
 
-
-@onready var scene_details = $SceneDetails
 
 const _SCENE_NAMES: Array[String] = ["scene_one", "scene_two"]
 const _SCENES: Dictionary = {
@@ -14,13 +12,17 @@ const _SCENES: Dictionary = {
 	"scene_two": preload("res://examples/scene_changes/scene_two.tscn"),
 }
 
+
 var _current_scene: int = 0
 var _current_scene_ref: Node
 
 
+@onready var scene_details = $SceneDetails
+
+
 func _ready() -> void:
 	load_scene(_current_scene)
-	
+
 
 func _process(_p_delta) -> void:
 	scene_details.text = "Current scene: %s" % _SCENE_NAMES[_current_scene]
@@ -35,8 +37,8 @@ func _input(p_event) -> void:
 func load_scene(p_index: int) -> void:
 	if _current_scene_ref != null:
 		remove_child(_current_scene_ref)
-	
+
 	var scene_name = _SCENE_NAMES[p_index]
 	_current_scene_ref = _SCENES[scene_name].instantiate()
-	
+
 	add_child(_current_scene_ref)

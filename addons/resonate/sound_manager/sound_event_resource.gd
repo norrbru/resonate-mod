@@ -7,7 +7,7 @@ extends Resource
 @export var name: String = ""
 
 ## The bus to use for all sound events in this bank.[br][br]
-## [b]Note:[/b] this will override the bus set in this events sound bank, 
+## [b]Note:[/b] this will override the bus set in this events sound bank,
 ## or your project settings (Audio/Manager/Sound/Bank)
 @export var bus: String = ""
 

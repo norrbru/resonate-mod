@@ -1,0 +1,44 @@
+include:
+  - template: Security/SAST.gitlab-ci.yml
+  - template: Jobs/Secret-Detection.gitlab-ci.yml
+
+stages:
+  - lint
+  - test
+
+gdscriptlint:
+  image: python:3
+  stage: lint
+  before_script:
+    - pip3 install git+https://github.com/Scony/godot-gdscript-toolkit.git
+  script:
+    - gdlint core
+    - gdlint maps
+
+markdownlint:
+  image: node:latest
+  stage: lint
+  before_script:
+    - npm install
+  script:
+    - npm run markdownlint
+    - npm run changeloglint
+
+prettier:
+  image: node:latest
+  stage: lint
+  before_script:
+    - npm install
+  script:
+    - npm run prettier:test
+
+spellcheck:
+  image: node:latest
+  stage: lint
+  before_script:
+    - npm install
+  script:
+    - npm run spellcheck
+
+sast:
+  stage: test

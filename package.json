@@ -1,0 +1,38 @@
+{
+  "name": "resonate",
+  "version": "2.4.1",
+  "description": "An all-in-one sound and music management addon for the Godot game engine.",
+  "productName": "Resonate",
+  "author": "Dan Griffiths <dgriffiths@widgitlabs.com>",
+  "private": true,
+  "repository": "https://gitlab.com/widgitgaming/godot/resonate",
+  "scripts": {
+    "markdownlint": "npx markdownlint-cli2 --config ./config/.markdownlint-cli2.jsonc",
+    "changeloglint": "npx markdownlint-cli2 --config ./config/.kac.markdownlint-cli2.jsonc",
+    "prettier:test": "prettier --check \"**/*.{md,json}\" --ignore-path .gitignore",
+    "prettier:write": "prettier --write \"**/*.{md,json}\" --ignore-path .gitignore",
+    "spellcheck": "cspell \"**/*.md\""
+  },
+  "cspell": {
+    "dictionaryDefinitions": [
+      {
+        "name": "resonate",
+        "path": "./.cspell/resonate.txt",
+        "addWords": true
+      }
+    ],
+    "dictionaries": [
+      "resonate"
+    ],
+    "ignorePath": [
+      "node_modules",
+      ".cspell/resonate.txt"
+    ]
+  },
+  "devDependencies": {
+    "cspell": "^9.6.0",
+    "markdownlint": "^0.40.0",
+    "markdownlint-cli2": "^0.20.0",
+    "prettier": "^3.7.4"
+  }
+}

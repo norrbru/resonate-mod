@@ -12,8 +12,8 @@ gdscriptlint:
   before_script:
     - pip3 install git+https://github.com/Scony/godot-gdscript-toolkit.git
   script:
-    - gdlint core
-    - gdlint maps
+    - gdlint addons
+    - gdlint examples
 
 markdownlint:
   image: node:latest

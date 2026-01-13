@@ -1,0 +1,63 @@
+{
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "markdownlint.config": {
+    "default": true,
+    "MD030": false,
+    "MD007": false
+  },
+  "prettier.tabWidth": 4,
+  "[gdscript]": {
+    "editor.defaultFormatter": "geequlim.godot-tools"
+  },
+  "files.exclude": {
+    "**/.godot": true,
+    "**/editor/editor_data/cache": true,
+    "**/editor/editor_data/shader_cache": true
+  },
+  "editor.fontSize": 12,
+  "editor.formatOnPaste": true,
+  "files.trimTrailingWhitespace": true,
+  "files.watcherExclude": {
+    "**/editor/editor_data/cache/**": true
+  },
+  "search.exclude": {
+    "**/editor/editor_data/cache": true
+  },
+  "cSpell.customDictionaries": {
+    "resonate": {
+      "name": "resonate",
+      "path": "${workspaceRoot}/.cspell/resonate.txt",
+      "description": "Dictionary for Resonate",
+      "addWords": true
+    },
+    "custom": true
+  },
+  "cSpell.dictionaries": ["resonate"],
+  "cSpell.ignorePaths": [
+    "package-lock.json",
+    "node_modules",
+    "vscode-extension",
+    ".git/{info,lfs,logs,refs,objects}/**",
+    ".git/{index,*refs,*HEAD}",
+    ".vscode",
+    ".vscode-insiders",
+    ".gitignore",
+    "**/*.tscn",
+    "licenses",
+    "*.code-workspace",
+    ".gdlintrc",
+    "*.godot",
+    "editor"
+  ],
+  "less.validate": false,
+  "scss.validate": false,
+  "git.closeDiffOnOperation": true,
+  "git.fetchOnPull": true,
+  "markdown.extension.list.indentationSize": "inherit"
+}

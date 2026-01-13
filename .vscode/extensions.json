@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "geequlim.godot-tools",
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig",
+    "chouzz.vscode-better-align",
+    "streetsidesoftware.code-spell-checker",
+    "mrorz.language-gettext",
+    "yzhang.markdown-all-in-one",
+    "howardzuo.vscode-npm-dependency",
+    "davidanson.vscode-markdownlint",
+    "dunstontc.vscode-gitignore-syntax"
+  ]
+}

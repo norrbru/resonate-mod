@@ -1,6 +1,6 @@
 # **_Resonate_**
 
-![Resonate](resonate-header.jpg)
+![Resonate](/docs/images/resonate-header.jpg)
 
 An all-in-one sound and music management addon for the Godot game engine (see
 compatibility).

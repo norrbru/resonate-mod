@@ -25,8 +25,18 @@
       "resonate"
     ],
     "ignorePath": [
+      "package-lock.json",
       "node_modules",
-      ".cspell/resonate.txt"
+      ".cspell/resonate.txt",
+      "vscode-extension",
+      ".git/{info,lfs,logs,refs,objects}/**",
+      ".git/{index,*refs,*HEAD}",
+      ".vscode",
+      ".vscode-insiders",
+      ".gitignore",
+      "**/*.tscn",
+      ".gdlintrc",
+      "*.godot"
     ]
   },
   "devDependencies": {

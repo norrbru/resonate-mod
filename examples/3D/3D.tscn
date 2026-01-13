@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://3kswph4l3ba6"]
 
-[ext_resource type="Script" path="res://examples/3D/3D.gd" id="1_4y185"]
-[ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_bank.gd" id="2_xngck"]
-[ext_resource type="Script" path="res://addons/resonate/sound_manager/sound_event_resource.gd" id="3_3oot1"]
+[ext_resource type="Script" uid="uid://cl1mjx4cli4dh" path="res://examples/3D/3D.gd" id="1_4y185"]
+[ext_resource type="Script" uid="uid://ce4663ihappnk" path="res://addons/resonate/sound_manager/sound_bank.gd" id="2_xngck"]
+[ext_resource type="Script" uid="uid://36xmqkvux3vt" path="res://addons/resonate/sound_manager/sound_event_resource.gd" id="3_3oot1"]
 [ext_resource type="AudioStream" uid="uid://bcv4ev20vqxx2" path="res://audio/music_stems/house_drums_stem.mp3" id="4_lnff3"]
 [ext_resource type="LabelSettings" uid="uid://tysg4xge4hsu" path="res://shared/title_label_settings.tres" id="7_ythoj"]
 [ext_resource type="LabelSettings" uid="uid://bldprl7vev3uv" path="res://shared/description_label_settings.tres" id="8_6qcxl"]
-[ext_resource type="Script" path="res://examples/3D/pivot.gd" id="9_leetf"]
+[ext_resource type="Script" uid="uid://b5dlt0344d3dx" path="res://examples/3D/pivot.gd" id="9_leetf"]
 
 [sub_resource type="Resource" id="Resource_5hea7"]
 script = ExtResource("3_3oot1")

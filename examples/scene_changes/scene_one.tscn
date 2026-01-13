@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://qfk8ucywmppo"]
 
-[ext_resource type="Script" path="res://examples/scene_changes/scene_one.gd" id="1_ac5rj"]
-[ext_resource type="Script" path="res://addons/resonate/music_manager/music_bank.gd" id="4_fi4fr"]
-[ext_resource type="Script" path="res://addons/resonate/music_manager/music_track_resource.gd" id="5_wtd24"]
-[ext_resource type="Script" path="res://addons/resonate/music_manager/music_stem_resource.gd" id="6_4afm1"]
+[ext_resource type="Script" uid="uid://d4g4kfwffa0p8" path="res://examples/scene_changes/scene_one.gd" id="1_ac5rj"]
+[ext_resource type="Script" uid="uid://tcthnorjpgue" path="res://addons/resonate/music_manager/music_bank.gd" id="4_fi4fr"]
+[ext_resource type="Script" uid="uid://b7b808lp7kq7n" path="res://addons/resonate/music_manager/music_track_resource.gd" id="5_wtd24"]
+[ext_resource type="Script" uid="uid://ddb2xi0y6ub48" path="res://addons/resonate/music_manager/music_stem_resource.gd" id="6_4afm1"]
 [ext_resource type="AudioStream" uid="uid://bcv4ev20vqxx2" path="res://audio/music_stems/house_drums_stem.mp3" id="8_qa3at"]
 
 [sub_resource type="Resource" id="Resource_6vob4"]

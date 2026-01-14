@@ -85,7 +85,7 @@ release:
     - job: package
       artifacts: true
   script:
-    - glab auth login --job-token ${CI_JOB_TOKEN}
+    - glab auth login --token ${RESONATE_TOKEN}
     - glab release create ${PACKAGE_VERSION}
     - glab release upload ${PACKAGE_VERSION} dist/${PACKAGE_NAME}-${PACKAGE_VERSION}-*.zip
   rules:

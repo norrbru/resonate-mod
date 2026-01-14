@@ -70,4 +70,4 @@ package:
     - 'curl --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file ${PACKAGE_NAME}-${PACKAGE_VERSION}-${CI_COMMIT_REF_SLUG}.zip
       ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/${PACKAGE_NAME}/${PACKAGE_VERSION}/${PACKAGE_NAME}-${PACKAGE_VERSION}-${CI_COMMIT_REF_SLUG}.zip'
   rules:
-    - if: $CI_PIPELINE_SOURCE == 'api' && $CI_COMMIT_BRANCH == /^godot\/.*$/
+    - if: $CI_PIPELINE_SOURCE == 'pipeline' && $CI_COMMIT_BRANCH == /^godot\/.*$/

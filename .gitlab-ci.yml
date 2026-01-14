@@ -86,7 +86,7 @@ release:
       artifacts: true
   script:
     - glab auth login --job-token ${CI_JOB_TOKEN}
-    - glab release create ${CI_COMMIT_TAG}
-    - glab release upload ${CI_COMMIT_TAG} dist/${PACKAGE_NAME}-${PACKAGE_VERSION}-*.zip
+    - glab release create ${PACKAGE_VERSION}
+    - glab release upload ${PACKAGE_VERSION} dist/${PACKAGE_NAME}-${PACKAGE_VERSION}-*.zip
   rules:
     - if: $CI_PIPELINE_SOURCE == 'pipeline'

@@ -1,6 +1,6 @@
 # **_Resonate_**
 
-![Resonate](/docs/images/resonate-header.jpg)
+![Resonate](/assets/resonate-header.jpg)
 
 An all-in-one sound and music management addon for the Godot game engine (see
 compatibility).
@@ -33,9 +33,7 @@ the (cross-)fading of tracks or stems out of the box.
 
 ## Docs
 
-- [Getting started]
-- [SoundManager documentation]
-- [MusicManager documentation]
+You can find complete docs on using Resonate on [our wiki].
 
 ## Examples
 
@@ -60,9 +58,7 @@ This project is provided **_free for personal and commercial use_** under the
 [MIT license] ❤
 
 [Huge Menace GitHub repository]: https://github.com/hugemenace/resonate/releases
-[Getting started]: docs/getting-started.md
-[SoundManager documentation]: docs/sound-manager.md
-[MusicManager documentation]: docs/music-manager.md
+[our wiki]: https://gitlab.com/widgitgaming/godot/resonate/-/wikis/home
 [Godot Asset Library]: https://godotengine.org/asset-library/asset/2546
 [GitLab releases page]: https://gitlab.com/widgitgaming/godot/resonate/-/releases
 [MIT license]: LICENSE

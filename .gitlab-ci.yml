@@ -5,7 +5,7 @@ include:
 stages:
   - lint
   - test
-  - build
+  - release
 
 gdscriptlint:
   image: python:3
@@ -45,7 +45,7 @@ sast:
   stage: test
 
 build:
-  stage: build
+  stage: release
   parallel:
     matrix:
       - GODOT: ["4.3", "4.4"]
@@ -54,7 +54,7 @@ build:
     - if: $CI_COMMIT_TAG
 
 package:
-  stage: build
+  stage: release
   image: node:latest
   before_script:
     - apt-get clean
@@ -67,7 +67,24 @@ package:
     - rsync -av ./addons dist/${PACKAGE_NAME}/
     - cd dist
     - zip -r ${PACKAGE_NAME}-${PACKAGE_VERSION}-${CI_COMMIT_REF_SLUG}.zip .
-    - 'curl --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file ${PACKAGE_NAME}-${PACKAGE_VERSION}-${CI_COMMIT_REF_SLUG}.zip
-      ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/${PACKAGE_NAME}/${PACKAGE_VERSION}/${PACKAGE_NAME}-${PACKAGE_VERSION}-${CI_COMMIT_REF_SLUG}.zip'
+    # - 'curl --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file ${PACKAGE_NAME}-${PACKAGE_VERSION}-${CI_COMMIT_REF_SLUG}.zip
+    #   ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/${PACKAGE_NAME}/${PACKAGE_VERSION}/${PACKAGE_NAME}-${PACKAGE_VERSION}-${CI_COMMIT_REF_SLUG}.zip'
+  artifacts:
+    paths:
+      - ${PACKAGE_NAME}-${PACKAGE_VERSION}-${CI_COMMIT_REF_SLUG}.zip
+    expire_in: never
   rules:
     - if: $CI_PIPELINE_SOURCE == 'pipeline'
+
+release:
+  stage: release
+  image: gitlab/glab:latest
+  needs:
+    - job: package
+      artifacts: true
+  script:
+    - PACKAGE_NAME=$(grep '"name":' package.json -m1 | cut -d\" -f4)
+    - PACKAGE_VERSION=$(grep '"version":' package.json -m1 | cut -d\" -f4)
+    - glab auth login --job-token ${CI_JOB_TOKEN}
+    - glab release create ${CI_COMMIT_TAG}
+    - glab release upload ${CI_COMMIT_TAG} ${PACKAGE_NAME}-${PACKAGE_VERSION}-*.zip

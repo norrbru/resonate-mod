@@ -52,13 +52,15 @@ release:
   stage: release
   image: gitlab/glab:latest
   script:
-    - glab auth login --token ${RESONATE_TOKEN}
+    - glab auth login --job-token ${CI_JOB_TOKEN}
     - glab release create ${PACKAGE_VERSION}
   rules:
     - if: $CI_COMMIT_TAG
 
 build:
   stage: release
+  needs:
+    - job: release
   parallel:
     matrix:
       - GODOT: ["4.3", "4.4"]

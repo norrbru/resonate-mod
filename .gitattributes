@@ -1,2 +1,12 @@
 # Normalize EOL for all files that Git considers text files.
 * text=auto eol=lf
+
+# Exclude files from exports
+.cspell export-ignore
+.vscode export-ignore
+.editorconfig export-ignore
+.gdlintrc export-ignore
+.gitattributes export-ignore
+.gitlab-ci.yml export-ignore
+package-lock.json export-ignore
+package.json export-ignore

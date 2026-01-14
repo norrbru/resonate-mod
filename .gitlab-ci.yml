@@ -80,9 +80,5 @@ package:
     - zip -r ${PACKAGE_NAME}-${PACKAGE_VERSION}-${CI_COMMIT_REF_SLUG}.zip .
     - glab auth login --token ${RESONATE_TOKEN}
     - glab release upload ${PACKAGE_VERSION} ${PACKAGE_NAME}-${PACKAGE_VERSION}-${CI_COMMIT_REF_SLUG}.zip
-  artifacts:
-    paths:
-      - ${PACKAGE_NAME}-${PACKAGE_VERSION}-${CI_COMMIT_REF_SLUG}.zip
-    expire_in: never
   rules:
     - if: $CI_PIPELINE_SOURCE == 'pipeline'

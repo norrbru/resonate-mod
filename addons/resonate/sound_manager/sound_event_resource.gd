@@ -1,10 +1,15 @@
+@tool
 class_name SoundEventResource
 extends Resource
 ## The container used to store the details of a sound event.
 
 
-## This sound event's unique identifier.
-@export var name: String = ""
+## This sound event's unique identifier. Sets the resource_name to the same value
+## so we get the correct name in the inspector.
+@export var name: String = "":
+	set(value):
+		name = value
+		resource_name = value
 
 ## The bus to use for all sound events in this bank.[br][br]
 ## [b]Note:[/b] this will override the bus set in this events sound bank,

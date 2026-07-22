@@ -2,6 +2,13 @@
 
 ![Resonate](/assets/resonate-header.jpg)
 
+---
+
+**This is a modified version of the original by Bruno Norrå.** 
+Get original at https://gitlab.com/widgitgaming/godot/resonate.
+
+---
+
 An all-in-one sound and music management addon for the Godot game engine (see
 compatibility).
 

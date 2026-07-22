@@ -70,8 +70,8 @@ func is_null() -> bool:
 
 ## Configure this player with the given streams and characteristics.
 # gdlint:ignore = max-line-length
-func configure(p_streams: Array, p_reserved: bool, p_bus: String, p_poly: bool, p_volume: float, p_pitch: float, p_mode: Node.ProcessMode) -> void:
-	PoolEntity.configure(self, p_streams, p_reserved, p_bus, p_poly, p_volume, p_pitch, p_mode)
+func configure(p_stream: AudioStream, p_reserved: bool, p_bus: String, p_poly: bool, p_volume: float, p_pitch: float, p_mode: Node.ProcessMode) -> void:
+	PoolEntity.configure(self, p_stream, p_reserved, p_bus, p_poly, p_volume, p_pitch, p_mode)
 
 
 ## Attach this player to a 2D/3D position or node.

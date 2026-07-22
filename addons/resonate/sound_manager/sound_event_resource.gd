@@ -17,5 +17,5 @@ extends Resource
 ## The pitch of the sound event.
 @export var pitch: float = 1.0
 
-## The collection of audio streams (variations) associated with this sound event.
-@export var streams: Array[AudioStream]
+## The audio stream associated with this sound event.
+@export var stream: AudioStream

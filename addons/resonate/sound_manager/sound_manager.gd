@@ -359,7 +359,7 @@ func _create_events(p_events: Array[SoundEventResource]) -> Dictionary:
 			"bus": event.bus,
 			"volume": event.volume,
 			"pitch": event.pitch,
-			"streams": event.streams,
+			"stream": event.stream,
 		}
 
 	return events
@@ -395,7 +395,7 @@ func _instance_manual(p_bank_label: String, p_event_name: String, p_reserved: bo
 	var bank = _event_table[p_bank_label] as Dictionary
 	var event = bank["events"][p_event_name] as Dictionary
 
-	if event.streams.size() == 0:
+	if event.stream == null:
 		# gdlint:ignore = max-line-length
 		push_error("Resonate - The event [%s] on bank [%s] has no streams, you'll need to add one at minimum." % [p_event_name, p_bank_label])
 		return _get_null_player(p_attachment)
@@ -409,7 +409,7 @@ func _instance_manual(p_bank_label: String, p_event_name: String, p_reserved: bo
 
 	var bus = p_bus if p_bus != "" else _get_bus(bank.bus, event.bus)
 
-	player.configure(event.streams, p_reserved, bus, p_poly, event.volume, event.pitch, bank.mode)
+	player.configure(event.stream, p_reserved, bus, p_poly, event.volume, event.pitch, bank.mode)
 	player.attach_to(p_attachment)
 
 	return player

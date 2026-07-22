@@ -18,8 +18,8 @@ static func create(p_base) -> Variant:
 
 ## Configure a PooledAudioStreamPlayer*.
 # gdlint:ignore = max-line-length
-static func configure(p_base, p_streams: Array, p_reserved: bool, p_bus: String, p_poly: bool, p_volume: float, p_pitch: float, p_mode: Node.ProcessMode) -> void:
-	p_base.streams = p_streams
+static func configure(p_base, p_stream: AudioStream, p_reserved: bool, p_bus: String, p_poly: bool, p_volume: float, p_pitch: float, p_mode: Node.ProcessMode) -> void:
+	p_base.stream = p_stream
 	p_base.poly = p_poly
 	p_base.bus = p_bus
 	p_base.process_mode = p_mode
@@ -114,12 +114,14 @@ static func sync_physics_process(p_base) -> void:
 
 ## Trigger a PooledAudioStreamPlayer*.
 static func trigger(p_base, p_varied: bool, p_pitch: float, p_volume: float) -> void:
-	if p_base.streams.size() == 0:
+	if p_base.stream == null:
 		# gdlint:ignore = max-line-length
-		push_warning("Resonate - The player [%s] does not contain any streams, ensure you're using the SoundManager to instance it correctly." % p_base.name)
+		push_warning("Resonate - The player [%s] does have a stream assigned, ensure you're using the SoundManager to instance it correctly." % p_base.name)
 		return
 
-	var next_stream = p_base.streams.pick_random()
+	#var next_stream = p_base.streams.pick_random()
+	var next_stream = p_base.stream
+	
 
 	if not p_base.poly and p_varied:
 		p_base.volume_db = p_volume
@@ -164,8 +166,11 @@ static func release(p_base, p_finish_playing: bool) -> void:
 	if p_base.releasing:
 		return
 
-	var has_loops = p_base.streams.any(ResonateUtils.is_stream_looped)
-
+	#var has_loops = p_base.streams.any(ResonateUtils.is_stream_looped)
+	var has_loops = ResonateUtils.is_stream_looped(p_base.stream)
+	
+	print(has_loops, " ", p_base.name) ## DEBUG; REMOVE
+	
 	if p_finish_playing and has_loops:
 		# gdlint:ignore = max-line-length
 		push_warning("Resonate - The player [%s] has looping streams and therefore will never release itself back to the pool (as playback continues indefinitely). It will be forced to stop." % p_base.name)

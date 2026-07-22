@@ -11,6 +11,24 @@ static func is_stream_looped(p_stream) -> bool:
 
 	if p_stream is AudioStreamWAV:
 		return p_stream.loop_mode != AudioStreamWAV.LOOP_DISABLED
+	
+	if p_stream is AudioStreamRandomizer:
+		var randomizer := p_stream as AudioStreamRandomizer
+		for i in randomizer.streams_count:
+			var sub_stream = randomizer.get_stream(i)
+			if sub_stream != null and is_stream_looped(sub_stream):
+				return true
+		return false
+
+	if p_stream is AudioStreamSynchronized:
+		var synced := p_stream as AudioStreamSynchronized
+		for i in synced.stream_count:
+			var sub_stream = synced.get_sync_stream(i)
+			if sub_stream != null and is_stream_looped(sub_stream):
+				return true
+		return false
+
+	# TODO: Fallbacks for other AudioStream types.
 
 	return false
 
